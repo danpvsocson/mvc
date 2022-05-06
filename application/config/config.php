@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+/* Nhập tên miền ở đây */
+$config['base_url'] = 'https://localhost/admin';
 
 /*
 |--------------------------------------------------------------------------

@@ -12,6 +12,10 @@ class home extends CI_Controller {
         $this->load->view('home');
         
     }
+    public function themSoSim()
+    {
+        
+    }
     
 
 }
