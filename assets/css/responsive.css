@@ -1,0 +1,204 @@
+/** Desktop */
+@media (min-width:1024px){
+    /* !Header */
+    .icon-header-mobile{
+        display: none;
+    }
+    #menu .nav-item:hover .sub-menu{
+        display: block;
+        animation: header-animation ease .3s;
+        z-index: 100;
+    }
+    /* !Banner */
+    #slide-banner{
+        margin-top: var(--size-header-pc);
+    }
+    #slide-banner .swiper-button-next, #slide-banner .swiper-button-prev, #slide-banner .swiper-pagination{
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s;
+
+    }
+    #slide-banner:hover .swiper-button-next , #slide-banner:hover .swiper-button-prev, #slide-banner:hover .swiper-pagination{
+        visibility: visible;
+        opacity: 1;
+        transition: all .3s;
+    }
+    /* ! Content */
+    /* ? News */
+    #content .news{
+        padding: 40px 0px;
+    }
+    #content .news h3{
+        font-size: 15px;
+    }
+    .news div.col-4{
+        width: 180px;
+        height: 120px;
+    }    
+    .cot2 img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cot2 h5{
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 30px;
+        padding: 0px 0px 10px 0px;
+        margin: 0px;
+    }
+    /* * Tuyen Sinh */
+    .tuyen-sinh img{
+        width: 64px;
+        height: 64px;
+    }
+    .tuyen-sinh h4{
+        padding: 15px 5px;
+    }
+    .tuyen-sinh div:last-child a{
+        align-items: center;
+        justify-content: center;
+        color: black;
+    
+    }
+    /* *Newspaper */
+    #content .bao-tri .accordion-body a:hover{
+        text-decoration: underline ;
+    }
+    /* * Các Ngành Khác */
+    .other > div{
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+/** Mobile */
+@media (max-width: 740px){
+    html{
+        font-size: 12px;
+    }
+
+    /* *Header */
+    .icon-header-pc{
+        display: none;
+    }
+    .icon-header-mobile{
+        float: right;
+
+    }
+    #header {
+        height: var(--size-header-mobile);
+        font-size: 16px;
+    }
+    #header .container {
+        padding: 0;
+    }
+    #header .logo{
+        margin-right: 50%;
+        transform: translateX(50%);
+    }
+    #header .logo-header img{
+        height: var(--size-header-mobile);
+        object-fit: cover;
+        padding: 10px;
+    }
+    #header .nav-item, .icon-header-mobile{
+        line-height: var(--line-height-mobile);
+    }
+    #header .nav-item a{
+        line-height: var(--line-height-mobile);
+    }
+
+    /* *Slide Banner */
+    #slide-banner{
+        margin-top: var(--size-header-mobile);
+    }
+    #slide-banner .swiper-button-next, #slide-banner .swiper-button-prev, #slide-banner .swiper-pagination{
+        display: none;
+    }
+
+    /* *News */
+    #content > div{
+        padding: 24px;
+    }
+    #content .news > h3{
+        font-size: 14px;
+    }
+    #content .sub-header{
+        padding: 20px 0px;
+    }
+    .cot2 img{
+        width: 100px;
+        height: 66px;
+        object-fit: cover;
+    }
+    .cot2 h5{
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 0px 0px 5px 0px;
+        margin: 0px;
+    }
+
+    /* * Tuyen Sinh */
+    .tuyen-sinh img{
+        width: 46px;
+        height: 46px;
+    }
+    .tuyen-sinh h4{
+        padding: 12px 5px;
+    }
+    /* * Bao Tri */
+    .bao-tri h4{
+        font-size: 17px;
+    }
+    .bao-tri iframe {
+        height: 200px;
+    }
+    .bao-tri button{
+        padding: 8px 0px 8px 8px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .accordion-button::before{
+        flex-shrink: 0;
+        width: 10px;
+        height: 10px;
+        content: "";
+        margin: 0px 8px;
+        background-image: url(../img/icon/plus.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .accordion-button:not(.collapsed)::before{
+        flex-shrink: 0;
+        content: "";
+        width: 10px;
+        margin: 0px 8px;
+        height: 10px;
+        background-image: url(../img/icon/minus.png);
+    }
+    /* * Các ngành khác */
+    .other{
+        padding: 30px 0px;
+    }
+    .other > div{
+        width: 100%;
+        padding: 0px 24px;
+    }
+    #other h2{
+        font-size: 23px;
+    }
+    /* *Footer */
+    .footer{
+        padding: 0px 24px;
+    }
+    .copyright {
+        font-size: 9px;
+        padding: 0px 24px;
+    }
+}
