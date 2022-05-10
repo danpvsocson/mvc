@@ -5,6 +5,3 @@
             once: true
         });
     </script>
-</body>
-
-</html>
