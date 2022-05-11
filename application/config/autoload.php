@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+// ! 3 mục cần cài đặt libraries(1), helper(2)
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -91,7 +91,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 /* Bật base url */
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'file');
 
 /*
 | -------------------------------------------------------------------

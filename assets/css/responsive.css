@@ -1,6 +1,11 @@
 /** Desktop */
 @media (min-width:1024px){
-    
+    .item-shiper{
+        display: inline-block;
+        width: 24.7%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 
@@ -10,10 +15,22 @@
     html{
         font-size: 12px;
     }
+    .item-shiper{
+        display: inline-block;
+        width: 49.4%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form.form>*{
+        width: 50%;
+    }
+    form.form>.btnadd{
+        width: 100%;
+    }
 
    
 }
 form .form-control:focus{
-    border-color: white;
+    border-color: rgb(245, 0, 0);
     box-shadow: none !important;
 }

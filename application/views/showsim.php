@@ -12,7 +12,7 @@
     <main>
         <div class="container">
             <h2 class="text-center">Danh Sách Sim</h2>
-            <div class="d-flex justify-content-center"><a href="addsim" class="btn btn-primary">Thêm Sim</a></div>
+            <div class="d-flex justify-content-center"><a href="<?php echo base_url('');?>index.php/lssim/addsim" class="btn btn-primary">Thêm Sim</a></div>
             <hr>
             <div class="row">
                 <?php foreach ($datashow as $key => $value): ?>

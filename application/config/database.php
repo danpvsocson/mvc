@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+//! Cài đặt database
 /*
 | -------------------------------------------------------------------
 | DATABASE CONNECTIVITY SETTINGS
