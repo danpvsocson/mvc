@@ -1,12 +1,12 @@
 /** Desktop */
 @media (min-width:1024px){
-    .item-shiper{
+    .item-shiper .card{
         display: inline-block;
-        width: 24.7%;
+        width: 19.7%;
         margin-left: auto;
         margin-right: auto;
     }
-    .avatarShiper {
+    .avatarShiper{
         width: 100%;
         height: 200px;
         object-fit: cover;
@@ -20,19 +20,19 @@
     html{
         font-size: 12px;
     }
-    .item-shiper{
+    .item-shiper .card{
         display: inline-block;
         width: 49.4%;
         margin-left: auto;
         margin-right: auto;
     }
-    form.form>*{
-        width: 50%;
+    .form>*{
+        width: 49%;
     }
-    form.form>.btnadd, form .txttitle{
+    .form>.btnadd, .txttitle{
         width: 100%;
     }
-    .avatarShiper {
+    .avatarShiper{
         width: 100%;
         height: 120px;
         object-fit: cover;
@@ -40,7 +40,7 @@
 
    
 }
-form .form-control:focus{
+.form-control:focus{
     border-color: rgb(245, 0, 0);
     box-shadow: none !important;
 }
