@@ -11,10 +11,12 @@
 
 <body>
     <main class="container">
-        
-        <form class="form row" method="post" action="<?php echo base_url('');?>index.php/shiper/addshiper" enctype="multipart/form-data">
-            <h3 class="text-center text-primary pt-3">Thêm Shiper Mới</h3>
-            <hr class=" text-danger">
+
+        <form class="form row" method="post" action="<?php echo base_url(''); ?>index.php/shiper/addshiper" enctype="multipart/form-data">
+            <div class="txttitle">
+                <h3 class="text-center text-primary pt-3 txttitle">Thêm Shiper Mới</h3>
+                <hr class=" text-danger">
+            </div>
             <div class="mb-3 col-md-6">
                 <span>Tên</span>
                 <input type="text" class="form-control" placeholder="Nhập tên" name="hoten">
