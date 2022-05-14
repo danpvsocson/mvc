@@ -91,7 +91,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 /* Bật base url */
-$autoload['helper'] = array('url', 'file');
+$autoload['helper'] = array('url', 'file', 'cookie');
 
 /*
 | -------------------------------------------------------------------

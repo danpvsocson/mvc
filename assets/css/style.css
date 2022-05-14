@@ -40,6 +40,8 @@ html {
     scroll-behavior: smooth;
 }
 /* ! End Reset CSS */
-
+.an {
+    display: hidden;
+}
 
 
