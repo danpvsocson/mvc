@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//! 1 mục cần cài đặt base_url
+//! 2 mục cần cài đặt base_url, encryption_key
 
 /*
 |--------------------------------------------------------------------------
@@ -328,7 +328,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/userguide3/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '123';
 
 /*
 |--------------------------------------------------------------------------

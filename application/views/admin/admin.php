@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,22 +10,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login Admin</title>
 	<?php include('header.php'); ?>
-	<link rel="stylesheet" href="assets/css/admin.css">
-	<link href="assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
 
-	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<script type="application/x-javascript">
-		addEventListener("load", function() {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-
-	
 </head>
 
 <body>
@@ -37,7 +21,7 @@ session_start();
 		<h2>Login Here</h2>
 
 		<form action="<?php echo base_url(''); ?>admin/login" method="post" enctype="multipart/form-data">
-			
+
 			<input type="text" Name="Username" placeholder="Username" required="" value="">
 			<input type="password" Name="Password" placeholder="Password" required="" value="">
 			<!-- <ul class="agileinfotickwthree">
@@ -48,6 +32,10 @@ session_start();
 			</ul> -->
 			<div class="aitssendbuttonw3ls">
 				<input type="submit" value="LOGIN">
+				<?php
+					echo '<br><label class="text-danger mt-3">'. 
+					$this->session->flashdata("error").'</label>';
+				?>
 				<!-- <p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p> -->
 				<div class="clear"></div>
 			</div>
@@ -101,28 +89,7 @@ session_start();
 	</div>
 
 
-	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-
-	<!-- pop-up-box-js-file -->
-	<script src="assets/js/jquery.magnific-popup.js" type="text/javascript"></script>
-	<!--//pop-up-box-js-file -->
-	<script>
-		$(document).ready(function() {
-			$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
-				type: 'inline',
-				fixedContentPos: false,
-				fixedBgPos: true,
-				overflowY: 'auto',
-				closeBtnInside: true,
-				preloader: false,
-				midClick: true,
-				removalDelay: 300,
-				mainClass: 'my-mfp-zoom-in'
-			});
-
-		});
-	</script>
-	<script type="text/javascript" src="assets/js/admin.js"></script>
+	
 	<?php include('footer.php'); ?>
 </body>
 

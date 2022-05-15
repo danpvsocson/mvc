@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-// ! 3 mục cần cài đặt libraries(1), helper(2)
+// ! 4 mục cần cài đặt libraries(2), helper(2)
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -59,7 +59,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 // Khooi chay database
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database', 'session');
 
 /*
 | -------------------------------------------------------------------
