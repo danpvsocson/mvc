@@ -34,7 +34,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/login_success"><i class="fas fa-home"></i> Home</a>
+                            <a class="nav-link text-dark" aria-current="page" href="admin/admin_manager"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,16 +67,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
                 <nav class="float-end">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-while dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Admin
+                        <button type="button" class="btn btn-while dropdown-toggle ps-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-cog"></i> Admin
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <div class="btn btn-white dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Đổi mật khẩu
+                                    Đổi mật khẩu <i class="fas fa-key"></i>
                                 </div>
                             </li>
-                            <li><a class="dropdown-item" href="admin/logout">Thoát</a></li>
+                            <li><a class="dropdown-item" href="admin/logout">Thoát <i class="fas fa-sign-out-alt"></i></a></li>
                         </ul>
                     </div>
                 </nav>

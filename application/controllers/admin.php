@@ -10,7 +10,7 @@ class admin extends CI_Controller
 
 	public function index()
 	{	
-		$this->load->view('admin/admin.php');
+		$this->load->view('admin/admin');
 	}
 	public function login()
 	{
@@ -25,7 +25,7 @@ class admin extends CI_Controller
 				'username' => $username
 			);
 			$this->session->set_userdata($session_data);
-            redirect(base_url().'admin/login_success');
+            redirect(base_url().'admin/admin_manager');
 			// echo '<script>alert("Đăng Nhập Thành Công");</script>';
 		} else {
 			// echo '<script>alert("Đăng Nhập Thất Bại");</script>';
@@ -37,10 +37,10 @@ class admin extends CI_Controller
 			// $this->load->view('admin/admin.php');
 		}
 	}
-	public function login_success()
+	public function admin_manager()
 	{	
 		if ($this->session->userdata('username') != '') {
-			$this->load->view('admin/login_success');
+			$this->load->view('admin/admin_manager');
 		} else {
 			// $this->load->view('admin');
 			$this->login();
@@ -50,27 +50,26 @@ class admin extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('username');
-		$this->load->view('admin/admin');
+		// $this->load->view('admin/admin_login');
 		// $this->login();
+		redirect(base_url().'admin');
 	}
 	public function edit_password_admin()
 	{
 		$password = $this->input->post('password');
 		$this->load->model('admin/admin_login');
 		if ($this->admin_login->edit_password_admin($password)) {
-			echo '<script>alert("Thay Đổi Mật Khẩu Thành Công");</script>';
-			$this->load->view('admin/login_success');
 			// $this->session->set_flashdata('success', 'Thay Đổi Mật Khẩu Thành Công');
-			// redirect(base_url().'admin/login_success');
+			// redirect(base_url().'admin');
+			echo '<script>alert("Thay Đổi Mật Khẩu Thành Công");</script>';
+			$this->load->view('admin/admin_manager');
 		}
 	}
 	public function account()
 	{	
 		if ($this->session->userdata('username') != '') {
-
 			$this->load->view('admin/account');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
@@ -81,7 +80,6 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/content');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
@@ -92,7 +90,6 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/shop');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
@@ -103,7 +100,6 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/modul');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
@@ -114,7 +110,6 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/help');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
@@ -125,7 +120,6 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/bug');
 		} else {
-			// $this->load->view('admin');
 			$this->login();
 		}
 		
