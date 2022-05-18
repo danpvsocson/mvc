@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Manager</title>
+   
     <base href="<?php echo base_url(); ?>">
     <!-- * Boostrap  --->
     <link rel="stylesheet" href="assets/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -34,7 +34,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/admin_manager"><i class="fas fa-home"></i> Home</a>
+                            <a class="nav-link text-dark" aria-current="page" href="admin/home"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

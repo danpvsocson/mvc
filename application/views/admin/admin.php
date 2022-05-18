@@ -17,13 +17,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<h1>Admin Login Form</h1>
 
-	<div class="w3layoutscontaineragileits">
+	<div class="w3layoutscontaineragileits" style="border-radius: 10px;">
 		<h2>Login Here</h2>
 
 		<form action="<?php echo base_url(''); ?>admin/login" method="post" enctype="multipart/form-data">
 
-			<input type="text" Name="Username" placeholder="Username" required="" value="">
-			<input type="password" Name="Password" placeholder="Password" required="" value="">
+			<input type="text" Name="Username" placeholder="Username" required="" value="" style="border-radius: 10px;">
+			<input type="password" Name="Password" placeholder="Password" required="" value="" style="border-radius: 10px;">
 			<!-- <ul class="agileinfotickwthree">
 					<input type="checkbox" id="brand1" name="brand1">
 					<label for="brand1" class="brand1"><span></span>Remember me</label>
@@ -31,7 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</li>
 			</ul> -->
 			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="LOGIN">
+				<input type="submit" value="LOGIN" style="border-radius: 10px;">
 				<?php
 					echo '<br><label class="text-danger mt-3">'. 
 					$this->session->flashdata("error").'</label>';

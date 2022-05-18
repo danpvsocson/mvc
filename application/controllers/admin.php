@@ -25,7 +25,7 @@ class admin extends CI_Controller
 				'username' => $username
 			);
 			$this->session->set_userdata($session_data);
-            redirect(base_url().'admin/admin_manager');
+            redirect(base_url().'admin/home');
 			// echo '<script>alert("Đăng Nhập Thành Công");</script>';
 		} else {
 			// echo '<script>alert("Đăng Nhập Thất Bại");</script>';
@@ -34,16 +34,16 @@ class admin extends CI_Controller
 			// 	</div>';
 			$this->session->set_flashdata('error', 'Sai Tài Khoản Hoặc Mật Khẩu');
 			$this->index();
-			// $this->load->view('admin/admin.php');
 		}
 	}
-	public function admin_manager()
+	public function home()
 	{	
 		if ($this->session->userdata('username') != '') {
-			$this->load->view('admin/admin_manager');
+			$this->load->view('admin/home');
 		} else {
-			// $this->load->view('admin');
-			$this->login();
+			// $this->login();
+			// $this->load->view('admin/admin');
+			redirect(base_url().'admin/admin');
 		}
 		
 	}
@@ -62,7 +62,8 @@ class admin extends CI_Controller
 			// $this->session->set_flashdata('success', 'Thay Đổi Mật Khẩu Thành Công');
 			// redirect(base_url().'admin');
 			echo '<script>alert("Thay Đổi Mật Khẩu Thành Công");</script>';
-			$this->load->view('admin/admin_manager');
+			$this->load->view('admin/home');
+			// redirect(base_url().'admin/home');
 		}
 	}
 	public function account()
@@ -70,7 +71,8 @@ class admin extends CI_Controller
 		if ($this->session->userdata('username') != '') {
 			$this->load->view('admin/account');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
@@ -80,7 +82,8 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/content');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
@@ -90,7 +93,8 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/shop');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
@@ -100,7 +104,8 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/modul');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
@@ -110,7 +115,8 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/help');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
@@ -120,7 +126,8 @@ class admin extends CI_Controller
 
 			$this->load->view('admin/bug');
 		} else {
-			$this->login();
+			// $this->login();
+			redirect(base_url().'admin');
 		}
 		
 	}
