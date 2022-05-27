@@ -7,6 +7,6 @@
     <title>Trang Chu</title>
 </head>
 <body>
-    
+    Xin chao
 </body>
 </html>
