@@ -37,10 +37,23 @@
         height: 120px;
         object-fit: cover;
     }
+    #gioitinh{
+        width: 30%;
+        display: inline-block;
+    }
+    #avatar{
+        width: 50%;
+        display: inline-block;
+    }
 
    
 }
 .form-control:focus{
     border-color: rgb(245, 0, 0);
     box-shadow: none !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

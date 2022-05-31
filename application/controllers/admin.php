@@ -66,6 +66,7 @@ class admin extends CI_Controller
 			// redirect(base_url().'admin/home');
 		}
 	}
+	// * Account
 	public function account()
 	{	
 		if ($this->session->userdata('username') != '') {
@@ -76,6 +77,23 @@ class admin extends CI_Controller
 		}
 		
 	}
+	public function add_account_form()
+	{
+		$this->load->view('admin/add_account');
+	}
+	public function add_account()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$hoten = $this->input->post('hoten');
+		$gioitinh = $this->input->post('gioitinh');
+		$username = $this->input->post('username');
+		$username = $this->input->post('username');
+		$username = $this->input->post('username');
+		$username = $this->input->post('username');
+
+	}
+	
 	public function content()
 	{	
 		if ($this->session->userdata('username') != '') {
@@ -131,6 +149,7 @@ class admin extends CI_Controller
 		}
 		
 	}
+	
 }
 
 /* End of file: home.php */

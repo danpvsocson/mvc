@@ -85,7 +85,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- //for register popup -->
 
 	<div class="w3footeragile">
-		<p> &copy; 2022 | Design by <a href="http://w3layouts.com" target="_blank">DanPV</a></p>
+		<p> &copy; 2022 | Design by <a href="https://www.fb.com/phamvandanhk9" target="_blank">DanPV</a></p>
 	</div>
 
 

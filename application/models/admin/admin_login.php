@@ -16,7 +16,6 @@ class admin_login extends CI_Model {
         $this->db->where('password', $password);
         $login_status = $this->db->get('admin');
         $login_status = $login_status->result_array();
-        $this->db->join('table', 'fk = pk', 'INNER');
         //  var_dump($loginstatus);
         if ($login_status) {
             return $login_status;
