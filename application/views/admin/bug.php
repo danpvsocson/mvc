@@ -1,4 +1,7 @@
 <?php include('nav_admin.php'); ?>
 <title>Bug Manager</title>
-<h1>Đây là trang truy vết</h1>
+<section class=" container" id="body">
+
+    <h1>Đây là trang truy vết</h1>
+</section>
 <?php include('footer_admin.php'); ?>
