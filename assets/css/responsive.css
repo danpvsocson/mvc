@@ -11,6 +11,9 @@
         height: 200px;
         object-fit: cover;
     }
+    section#body{
+        margin-top: 56px;
+    }
 }
 
 
@@ -20,11 +23,17 @@
     html{
         font-size: 12px;
     }
+    section#body{
+        margin-top: 42.5px;
+    }
     .item-shiper .card{
         display: inline-block;
         width: 49.4%;
         margin-left: auto;
         margin-right: auto;
+    }
+    .off{
+        display: none;
     }
     .form>*{
         width: 49%;
@@ -38,12 +47,16 @@
         object-fit: cover;
     }
     #gioitinh{
-        width: 30%;
+        width: 50%;
+        display: inline-block;
+    }
+    #trangthai{
+        width: 50%;
         display: inline-block;
     }
     #avatar{
         width: 50%;
-        display: inline-block;
+        display:  inline-block;
     }
 
    

@@ -23,7 +23,7 @@ class shiper extends CI_Controller {
         $sodonhang = $this->input->post('sodonhang');
         $linkfb = $this->input->post('linkfb');
         // * Model Upload
-        $config['upload_path'] = './uploads/img';
+        $config['upload_path'] = './uploads';
         $config['allowed_types'] = 'gif|jpg|png|webp';
         $config['max_size']      = 100000;
         $config['max_width']     = 2000;

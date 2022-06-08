@@ -32,41 +32,63 @@
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <label class="input-group-text" id="basic-addon1">Mật Khẩu</label>
-                <input type="password" class="form-control" name="password" placeholder="Nhập Mật Khẩu" aria-label="password" aria-describedby="basic-addon1">
+                <input type="password" class="form-control" name="password" id="password-field" placeholder="Nhập Mật Khẩu" aria-label="password" aria-describedby="basic-addon1">
+                <i class="fas fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-2 field-icon toggle-password" toggle="#password-field" style="cursor: pointer; z-index: 9;" id="togglePassword"></i>
+                <script>
+                    $(".toggle-password").click(function() {
+
+                        $(this).toggleClass("fa-eye fa-eye-slash");
+                        var input = $($(this).attr("toggle"));
+                        if (input.attr("type") == "password") {
+                            input.attr("type", "text");
+                        } else {
+                            input.attr("type", "password");
+                        }
+                    });
+                </script>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="sdt">
             <div class="input-group mb-3">
                 <label class="input-group-text" id="basic-addon1">Số Điện Thoại</label>
                 <input type="number" class="form-control" name="sdt" placeholder="Nhập Số Điện Thoại" aria-label="phone" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-2" id="gioitinh">
-            <select class="form-select gioitinh" aria-label="Default select example" name="gioitinh">
-                <option value="0">Giới Tính</option>
-                <option value="1">Nam</option>
-                <option value="2">Nữ</option>
-            </select>
-        </div>
-        <div class="col-md-5" id="avatar">
+        <div class="col-md-4" id="avatar">
             <div class="input-group mb-3">
                 <input type="file" name="avatar" id="img" style="display:none;" />
-                <label for="img" class="input-group-text" id="basic-addon1">Chọn Ảnh Đại Diện</label>
+                <label for="img" class="input-group-text" id="basic-addon1" style="cursor: pointer;">Chọn Ảnh</label>
+                <div class="col-md-8" id="gioitinh">
+                    <select class="form-select " aria-label="Default select example" name="gioitinh">
+                        <option selected value="0">Giới Tính</option>
+                        <option value="1">Nam</option>
+                        <option value="2">Nữ</option>
+                    </select>
+                </div>
             </div>
+        </div>
+        <div class="col-md-4" id="trangthai">
+            <div class="input-group mb-3">
+                <label class="input-group-text" id="basic-addon1">Trạng Thái</label>
+                <select class="form-select" aria-label="Default select example" name="trangthai">
+                    <option value="1">Kích Hoạt</option>
+                    <option value="2" selected>Vô Hiệu Hóa</option>
+                </select>
+            </div>
+        </div>
 
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck" name="trangthai">
-                <label class="form-check-label" for="gridCheck">
-                    Kích hoạt
-                </label>
-            </div>
-        </div>
         <div class="col-12 d-flex justify-content-center">
-            <a type="submit" class="btn btn-primary me-2" name="btnluu" href="<?php echo base_url(''); ?>admin/add_account">Lưu</a>
+            <input type="submit" class="btn btn-primary me-2" name="btnluu" href="<?php echo base_url(''); ?>admin/add_account" value="Thêm">
             <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
         </div>
+        <div class="col-12 d-flex justify-content-center">
+            <?php
+            echo '<label class="text-danger">' . $this->session->flashdata("error") . '</label>';
+            echo '<label class="text-success">' . $this->session->flashdata("success") . '</label>';
+            ?>
+        </div>
+
     </form>
+
 </section>
 <?php include('footer_admin.php'); ?>
