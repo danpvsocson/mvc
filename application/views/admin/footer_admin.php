@@ -1,8 +1,11 @@
 </main>
+<div class="thong_bao">
+    <p>123333</p>
+</div>
 <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 
 	<!-- pop-up-box-js-file -->
-	<script src="assets/js/jquery.magnific-popup.js" type="text/javascript"></script>
+	<script src="assets/js/admin/jquery.magnific-popup.js" type="text/javascript"></script>
 	<!--//pop-up-box-js-file -->
 	<script>
 		$(document).ready(function() {

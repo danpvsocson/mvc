@@ -2,10 +2,11 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class admin extends CI_Controller
 {
-
+	private $account_page;
 	public function __construct()
 	{
 		parent::__construct();
+		$this->account_page = 10;
 	}
 
 	public function index()
@@ -70,9 +71,13 @@ class admin extends CI_Controller
 	{
 		if ($this->session->userdata('username') != '') {
 			$this->load->model('admin/view');
-			$account = $this->view->view_account();
-			$account = array('accountshow' => $account);
-			$this->load->view('admin/account', $account);
+			$account = $this->view->view_account($this->account_page);
+			$page = $this->view->page_account($this->account_page);
+			$data = array(
+				'accountshow' => $account,
+				'page' => $page
+			);
+			$this->load->view('admin/account', $data);
 		} else {
 			// $this->login();
 			redirect(base_url() . 'admin');
@@ -84,76 +89,130 @@ class admin extends CI_Controller
 	}
 	public function add_account()
 	{
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$hoten = $this->input->post('hoten');
+		$password = trim($this->input->post('password'));
+		$username = trim($this->input->post('username'));
+		$hoten = trim($this->input->post('hoten'));
 		$gioitinh = $this->input->post('gioitinh');
+		$ngaysinh = $this->input->post('ngaysinh');
+		if(!$ngaysinh){$ngaysinh = date('d/m/Y');}
 		$sdt = $this->input->post('sdt');
-		$email = $this->input->post('email');
-		$diachi = $this->input->post('diachi');
-		$avatar = $this->input->post('avatar');
+		$email = trim($this->input->post('email'));
+		$diachi = trim($this->input->post('diachi'));
+
+		// * Upload Avatar
+		$config['upload_path'] = './uploads';
+		$config['allowed_types'] = 'gif|jpg|png|webp';
+		$config['max_size']      = 100000;
+		$config['max_width']     = 2000;
+		$config['max_height']    = 2000;
+		$config['encrypt_name']  = FALSE;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('avatar')) {
+			$data = array('upload_data' => $this->upload->data());
+			foreach ($data as $key => $value) {
+				$avatar = base_url() . 'uploads/' . $value["file_name"];
+			}
+		} else {
+			$avatar = 'https://bit.ly/3nOXIFh';
+		}
 		$trangthai = $this->input->post('trangthai');
-		$this->load->model('admin/add');
-		$check = $this->add->add_account($username, $password, $hoten, $gioitinh, $sdt, $email, $diachi, $avatar, $trangthai);
-		if ($check == 1) {
-			$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 2) {
-			$this->session->set_flashdata('error', 'Email Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 3) {
-			$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 4) {
-			$this->session->set_flashdata('success', 'Thêm Thành Công');
+		if ($gioitinh != '') {
+			$this->load->model('admin/add');
+			$check = $this->add->add_account($username, $password, $hoten, $gioitinh, $ngaysinh, $sdt, $email, $diachi, $avatar, $trangthai);
+			switch ($check) {
+				case 1:
+					$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
+					redirect(base_url() . 'admin/add_account_form');
+					break;
+				case 2:
+					$this->session->set_flashdata('error', 'Email Này Đã Có');
+					redirect(base_url() . 'admin/add_account_form');
+					break;
+				case 3:
+					$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
+					redirect(base_url() . 'admin/add_account_form');
+					break;
+				case 4:
+					$this->session->set_flashdata('success', 'Thêm Thành Công');
+					redirect(base_url() . 'admin/add_account_form');
+					break;
+			}
+		}else{
+			$this->session->set_flashdata('error', 'Chưa Chọn Giới Tính');
 			redirect(base_url() . 'admin/add_account_form');
 		}
 	}
-	public function form_edit_account($username)
+	public function form_edit_account($id)
 	{
-		$this->load->model('admin/edit');
-		$account = $this->edit->edit_account($username);
+		$this->load->model('admin/view');
+		$account = $this->view->edit_account($id);
 		$account = array('accountshow' => $account);
 		// var_dump($account);
 		$this->load->view('admin/edit_account', $account);
 	}
 	public function edit_account()
 	{
+		$id = $this->input->post('id');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$hoten = $this->input->post('hoten');
 		$gioitinh = $this->input->post('gioitinh');
+		$ngaysinh = $this->input->post('ngaysinh');
 		$sdt = $this->input->post('sdt');
 		$email = $this->input->post('email');
 		$diachi = $this->input->post('diachi');
-		$avatar = $this->input->post('avatar');
-		$trangthai = $this->input->post('trangthai');
-		$this->load->model('admin/edit');
-		$check = $this->edit->edit_account($username, $password, $hoten, $gioitinh, $sdt, $email, $diachi, $avatar, $trangthai);
-		if ($check == 1) {
-			$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 2) {
-			$this->session->set_flashdata('error', 'Email Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 3) {
-			$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
-			redirect(base_url() . 'admin/add_account_form');
-		}
-		if ($check == 4) {
-			$this->session->set_flashdata('success', 'Thay Đổi Thành Công');
 
-			redirect(base_url() . 'admin/form_edit_account');
+		// * Upload Avatar
+		$config['upload_path'] = './uploads';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']      = 100000;
+		$config['max_width']     = 20000;
+		$config['max_height']    = 20000;
+		$config['encrypt_name']  = FALSE;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('avatar')) {
+			$data = array('upload_data' => $this->upload->data());
+			foreach ($data as $key => $value) {
+				$avatar = base_url() . 'uploads/' . $value["file_name"];
+			}
+		} else {
+			$avatar = $this->input->post('avatar_old');
 		}
+		var_dump(date("d/m/Y"));
+		die();
+		$trangthai = $this->input->post('trangthai');
+			$this->load->model('admin/edit');
+			$check = $this->edit->edit_account($id, $username, $password, $hoten, $gioitinh, $ngaysinh, $sdt, $email, $diachi, $avatar, $trangthai);
+			switch ($check) {
+				case 1:
+					$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
+					$this->form_edit_account($username);
+					break;
+
+				case 2:
+					$this->session->set_flashdata('error', 'Email Này Đã Có');
+					$this->form_edit_account($username);
+					break;
+				case 3:
+					$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
+					$this->form_edit_account($username);
+					break;
+				case 4:
+					$this->session->set_flashdata('success', 'Thay Đổi Thành Công');
+					$this->form_edit_account($username);
+					// redirect(base_url() . 'admin/form_edit_account');
+					break;
+			}
+		
 	}
 	public function delete_account($username)
 	{
-		
+		$this->load->model('admin/delete');
+		if($this->delete->delete_account($username)){
+			echo'';
+		}else{
+			echo'';
+		}
 	}
 	// * Content
 	public function content()
@@ -176,11 +235,21 @@ class admin extends CI_Controller
 			redirect(base_url() . 'admin');
 		}
 	}
-	public function modul()
+	public function product_group()
 	{
 		if ($this->session->userdata('username') != '') {
 
-			$this->load->view('admin/modul');
+			$this->load->view('admin/product_group');
+		} else {
+			// $this->login();
+			redirect(base_url() . 'admin');
+		}
+	}
+	public function content_group()
+	{
+		if ($this->session->userdata('username') != '') {
+
+			$this->load->view('admin/content_group');
 		} else {
 			// $this->login();
 			redirect(base_url() . 'admin');
@@ -205,6 +274,9 @@ class admin extends CI_Controller
 			// $this->login();
 			redirect(base_url() . 'admin');
 		}
+	}
+	public function page($page)
+	{
 	}
 }
 

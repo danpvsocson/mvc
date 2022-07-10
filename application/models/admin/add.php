@@ -11,7 +11,7 @@ class add extends CI_Model
         parent::__construct();
     }
 
-    public function add_account($username, $password, $hoten, $gioitinh, $sdt, $email, $diachi, $avatar, $trangthai)
+    public function add_account($username, $password, $hoten, $gioitinh,$ngaysinh, $sdt, $email, $diachi, $avatar, $trangthai)
     {
         $this->db->select('*');
         $this->db->where('username', $username);
@@ -39,7 +39,8 @@ class add extends CI_Model
                         'username' => $username, 
                         'password' => $password, 
                         'hoten' => $hoten, 
-                        'gioitinh' => $gioitinh, 
+                        'gioitinh' => $gioitinh,
+                        'ngaysinh' => $ngaysinh, 
                         'sdt' => $sdt, 
                         'email' => $email, 
                         'diachi' => $diachi, 

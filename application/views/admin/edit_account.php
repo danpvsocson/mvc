@@ -4,100 +4,161 @@
     <h2 class=" text-center">Sửa Tài Khoản</h2>
     <hr>
     <?php foreach ($accountshow as $key => $data) : ?>
-        <form class="row g-3" action="<?php echo base_url(''); ?>admin/edit_account" method="post" enctype="multipart/form-data" autocomplete="on">
+        <form class="row g-3 form-add" action="<?php echo base_url(''); ?>admin/edit_account" method="post" enctype="multipart/form-data" autocomplete="on">
             <p class="mb-0">Hãy điền đủ mục (<label class="text-danger">*</label>)</p>
             <input type="hidden" value="<?= $data['id'] ?>" name="id">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Họ Và Tên</label>
-                    <input type="text" class="form-control" value="<?= $data['hoten'] ?>" name="hoten" placeholder="Nhập Họ Và Tên" aria-label="fullname" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Email</label>
-                    <input type="email" class="form-control" value="<?= $data['email'] ?>" name="email" placeholder="Nhập Email" aria-label="email" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Địa Chỉ</label>
-                    <input type="text" class="form-control" value="<?= $data['diachi'] ?>" name="diachi" placeholder="Nhập Địa Chỉ" aria-label="address" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Tài Khoản</label>
-                    <input type="text" class="form-control" value="<?= $data['username'] ?>" name="username" placeholder="Nhập Tên Đăng Nhập" aria-label="username" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Mật Khẩu</label>
-                    <input type="password" class="form-control" value="<?= $data['password'] ?>" name="password" id="password-field" placeholder="Nhập Mật Khẩu" aria-label="password" aria-describedby="basic-addon1">
-                    <i class="fas fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-2 field-icon toggle-password"  toggle="#password-field"  style="cursor: pointer; z-index: 9;" id="togglePassword"></i>
-                    <script>
-                        $(".toggle-password").click(function() {
+            <div class="col-md-3" style="display: flex;align-items: center;justify-content:center;">
+                <label for="input-img" class="preview" style="cursor: pointer;">
+                    <div class="decoration">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Chọn Ảnh</span>
+                    </div>
+                    <img src="<?= $data['avatar']?>" alt="">
+                </label>
+                <input type="file" hidden id="input-img" name="avatar"/>
+                <input type="text" hidden name="avatar_old" value="<?= $data['avatar']?>"/>
+                <script>
+                    const inputImg = document.querySelector('#input-img')
 
-                            $(this).toggleClass("fa-eye fa-eye-slash");
-                            var input = $($(this).attr("toggle"));
-                            if (input.attr("type") == "password") {
-                                input.attr("type", "text");
-                            } else {
-                                input.attr("type", "password");
-                            }
-                        });
-                    </script>
-                </div>
+                    inputImg.addEventListener('change', (e) => {
+                        let file = e.target.files[0]
+                        if (!file) return
+                        let img = document.createElement('img')
+                        img.src = URL.createObjectURL(file)
+                        document.querySelector('.preview').appendChild(img)
+                    })
+                </script>
             </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" id="basic-addon1">Số Điện Thoại</label>
-                    <input type="number" class="form-control" value="<?= $data['sdt'] ?>" name="sdt" placeholder="Nhập Số Điện Thoại" aria-label="phone" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-2" id="gioitinh">
-                <select class="form-select gioitinh" aria-label="Default select example" name="gioitinh">
-                    <?php
-                    if ($data['gioitinh'] == 1) {
-                        echo ' <option value="1" select>Nam</option>
-                                <option value="2">Nữ</option>';
-                    } else {
-                        echo ' <option value="2" select>Nữ</option>
-                                <option value="1">Nam</option>';
-                    }
-                    ?>
-                </select>
-            </div>
-            <div class="col-md-5" id="avatar">
-                <div class="input-group mb-3">
-                    <input type="file" name="avatar_new" id="img" style="display:none;" />
-                    <input type="hidden" name="avatra_old" value="">
-                    <label for="img" class="input-group-text" id="basic-addon1">Chọn Ảnh Đại Diện</label>
-                </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" name="hoten" value="<?= $data['hoten'] ?>" placeholder=" " aria-label="fullname" aria-describedby="basic-addon1">
+                            <label for="" class="input-name">Họ Và Tên</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group mb-4">
+                            <input type="email" class="form-control" name="email" placeholder=" " aria-label="email" aria-describedby="basic-addon1" value="<?= $data['email'] ?>">
+                            <label for="" class="input-name">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group mb-4">
+                            <input type="number" class="form-control" name="sdt" placeholder=" " aria-label="phone" aria-describedby="basic-addon1" value="<?= $data['sdt'] ?>">
+                            <label for="" class="input-name">Số Điện Thoại</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group mb-4">
+                            <input type="date" class="form-control" name="date" placeholder=" " aria-label="address" aria-describedby="basic-addon1" id="date" value="<?= $data['ngaysinh'] ?>" style="cursor: pointer;">
+                            <label for="date" class="input-name">Ngày Sinh</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" name="diachi" placeholder=" " aria-label="address" aria-describedby="basic-addon1" value="<?= $data['diachi'] ?>">
+                            <label for="" class="input-name">Địa Chỉ</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group mb-4">
+                            <select class="form-select " aria-label="Default select example" name="gioitinh">
+                                <?php
+                                switch ($data['gioitinh']) {
+                                    case 1:
+                                        echo ' <option selected value="1">Nam</option>
+                                        <option value="2">Nữ</option>';
+                                        break;
+                                    case 2:
+                                        echo '<option selected value="2">Nữ</option>
+                                        <option value="1">Nam</option>';
+                                        break;
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" name="username" placeholder=" " aria-label="username" aria-describedby="basic-addon1" value="<?= $data['username'] ?>">
+                            <label for="" class="input-name">Tài Khoản</label>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group mb-4">
 
-            </div>
-            <div class="col-12">
-                <div class="form-check d-flex justify-content-center">
+                            <input type="password" class="form-control" name="password" id="password-field" placeholder=" " aria-label="password" aria-describedby="basic-addon1" value="<?= $data['password'] ?>">
+                            <label for="" class="input-name">Mật Khẩu</label>
+                            <i class="fas fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-2 field-icon toggle-password" toggle="#password-field" style="cursor: pointer; z-index: 9;" id="togglePassword"></i>
+                            <script>
+                                $(".toggle-password").click(function() {
 
-                    <input class="form-check-input " type="checkbox" id="gridCheck" name="trangthai">
-                    <label class="form-check-label ms-1" for="gridCheck">
-                        Kích hoạt
-                    </label>
+                                    $(this).toggleClass("fa-eye fa-eye-slash");
+                                    var input = $($(this).attr("toggle"));
+                                    if (input.attr("type") == "password") {
+                                        input.attr("type", "text");
+                                    } else {
+                                        input.attr("type", "password");
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group mb-4">
+                            <select id="status" onchange="change()" class="form-select 
+                                <?php
+                                switch ($data['trangthai']) {
+                                    case 1:
+                                        echo 'text-success';
+                                        break;
+                                    case 2:
+                                        echo 'text-danger';
+                                        break;
+                                } ?>" aria-label="Default select example" name="trangthai">
+                                <?php
+                                switch ($data['trangthai']) {
+                                    case 1:
+                                        echo ' <option value="1" select class=" text-success">Enabled</option>
+                                <option value="2" class=" text-danger">Disabled</option>';
+                                        break;
+                                    case 2:
+                                        echo ' <option value="2" class=" text-danger" select>Disabled</option>
+                                <option value="1" class=" text-success">Enabled</option>';
+                                        break;
+                                    default:
+                                        echo 'Error';
+                                }
+                                ?>
+                            </select>
+                            <script>
+                                function change() {
+                                    var status = document.querySelector("#status");
+                                    if (status.value == 1) {
+                                        status.classList.add('text-success');
+                                        status.classList.remove('text-danger');
+                                    }
+                                    if (status.value == 2) {
+                                        status.classList.remove('text-success')
+                                        status.classList.add('text-danger')
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-center">
-                <input type="submit" class="btn btn-primary me-2" name="btnluu" href="<?php echo base_url(''); ?>admin/edit_account" value="Lưu">
-                <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <?php
-                echo '<label class="text-danger">' . $this->session->flashdata("error") . '</label>';
-                echo '<label class="text-success">' . $this->session->flashdata("success") . '</label>';
-                ?>
-            </div>
-
-        </form>
-    <?php endforeach ?>
+        <?php endforeach ?>
+        <div class="col-12 d-flex justify-content-center">
+            <input type="submit" class="btn btn-primary me-2" name="btnluu" href="<?php echo base_url(''); ?>admin/edit_account" value="Lưu">
+            <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+            <?php
+            echo '<label class="text-danger">' . $this->session->flashdata("error") . '</label>';
+            echo '<label class="text-success">' . $this->session->flashdata("success") . '</label>';
+            ?>
+        </div>
 </section>
 <?php include('footer_admin.php'); ?>

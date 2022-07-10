@@ -1,0 +1,81 @@
+/** Desktop */
+@media (min-width:1024px){
+    .item-shiper .card{
+        display: inline-block;
+        width: 19.7%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .avatarShiper{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    section#body{
+        margin-top: 56px;
+    }
+    html {
+        font-size: 16px;
+    }
+    /* *CSS */
+    .preview {
+        justify-items: center;
+        align-items:center;
+        background: rgb(167,254,255);
+    background: linear-gradient(52deg, rgba(167,254,255,1) 0%, rgba(138,255,164,1) 98%);
+        width: 230px;
+        height: 230px;
+        margin: 0px auto;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+    }
+    .preview i {
+        display: block;
+        font-size: 40px;
+    }
+}
+
+
+
+/** Mobile */
+@media (max-width: 740px){
+    html{
+        font-size: 11px;
+    }
+    section#body{
+        margin-top: 42.5px;
+    }
+    .off{
+        display: none;
+    }
+    .preview {
+        justify-items: center;
+        align-items:center;
+        background: rgb(167,254,255);
+    background: linear-gradient(52deg, rgba(167,254,255,1) 0%, rgba(138,255,164,1) 98%);
+        width: 180px;
+        height: 180px;
+        margin: 0px auto;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+    }
+    .preview i {
+        display: block;
+        font-size: 40px;
+    }
+    div.row > div.col-md-4,div.row > div.col-md-5 {
+        width: 50%;
+    }
+    div.row > div.col-md-6{
+        width: 75%;
+    }
+    div.row > div.col-md-2{
+        width: 25%;
+    }
+}
+.form-control:focus{
+    border-color: rgb(0, 26, 255);
+    box-shadow: none !important;
+}

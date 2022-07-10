@@ -181,7 +181,7 @@ img {
 /*-- Index-Page-Styling --*/
 
 body {
-	background: url("../img/b2.jpg");
+	background: url("../../img/admin/b2.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -248,16 +248,16 @@ input[type="email"] {
 	font-family: "Quicksand", sans-serif;
 }
 input[type="text"] {
-	background: url("../img/user.png") no-repeat 382px 11px;
+	background: url("../../img/admin/user.png") no-repeat 382px 11px;
 	background-size: 25px;
 }
 input[type="email"] {
-	background: url("../img/e-mail.png") no-repeat 382px 11px;
+	background: url("../../img/admin/e-mail.png") no-repeat 382px 11px;
 	background-size: 25px;
 }
 
 input[type="password"] {
-	background: url("../img/password.png") no-repeat 382px 11px;
+	background: url("../../img/admin/password.png") no-repeat 382px 11px;
 	background-size: 25px;
 }
 
@@ -308,7 +308,7 @@ ul.agileinfotickwthree
 	+ label
 	span:first-child:before {
 	content: "";
-	background: url(../img/tick.png) no-repeat;
+	background: url(../../img/admin/tick.png) no-repeat;
 	position: absolute;
 	left: 3px;
 	top: 3px;

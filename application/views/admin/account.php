@@ -10,7 +10,7 @@
             <th class="col-3">Username</th>
             <th class="col-3">Email</th>
             <th class="col-2 off">Số Điện Thoại</th>
-            <th class="col-1">Status</th>
+            <th class="col-1 off">Status</th>
             <th class="col-1 text-center">Sửa</th>
             <th class="col-1 text-center">Xóa</th>
         </tr>
@@ -25,17 +25,18 @@
                     <td class="off"><?= $data['sdt']?></td>
                     <?php
                     if ($data['trangthai'] == 1) {
-                    echo'<td><p class="text-success m-0">Enabled</p></td>';
+                        echo'<td class="off"><p class="text-success m-0">Enabled</p></td>';
                     } else {
-                    echo'<td><p class="text-danger m-0">Disabled</p></td>';
+                        echo'<td class="off"><p class="text-danger m-0">Disabled</p></td>';
                     }
                     ?>
-                    <td class="text-center"><a href="<?php echo base_url('');?>admin/form_edit_account/<?= $data['username']?>" class="btn btn-primary btn-sm">Sửa</a></td>
-                    <td class="text-center"><a href="<?php echo base_url('');?>admin/delete_account/<?= $data['username']?>" class="btn btn-danger btn-sm">Xóa</a></td>
+                    <td class="text-center"><a href="<?php echo base_url('');?>admin/form_edit_account/<?= $data['id']?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>Sửa</a></td>
+                    <td class="text-center"><a href="<?php echo base_url('');?>admin/delete_account/<?= $data['username']?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Xóa</a></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
 
     </table>
 </section>
+<?php include('page.php'); ?>
 <?php include('footer_admin.php'); ?>
