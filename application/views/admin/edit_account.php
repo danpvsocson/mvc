@@ -1,6 +1,10 @@
-<?php include('nav_admin.php'); ?>
+<?php
+
+use function PHPSTORM_META\type;
+
+include('nav_admin.php'); ?>
 <title>Account Manager</title>
-<section class=" container">
+<section class=" container" data-set="account" >
     <h2 class=" text-center">Sửa Tài Khoản</h2>
     <hr>
     <?php foreach ($accountshow as $key => $data) : ?>
@@ -13,10 +17,10 @@
                         <i class="fas fa-cloud-upload-alt"></i>
                         <span>Chọn Ảnh</span>
                     </div>
-                    <img src="<?= $data['avatar']?>" alt="">
+                    <img src="<?= $data['avatar'] ?>" alt="">
                 </label>
-                <input type="file" hidden id="input-img" name="avatar"/>
-                <input type="text" hidden name="avatar_old" value="<?= $data['avatar']?>"/>
+                <input type="file" hidden id="input-img" name="avatar" />
+                <input type="text" hidden name="avatar_old" value="<?= $data['avatar'] ?>" />
                 <script>
                     const inputImg = document.querySelector('#input-img')
 
@@ -51,7 +55,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="input-group mb-4">
-                            <input type="date" class="form-control" name="date" placeholder=" " aria-label="address" aria-describedby="basic-addon1" id="date" value="<?= $data['ngaysinh'] ?>" style="cursor: pointer;">
+                            <input type="date" class="form-control" name="ngaysinh" placeholder=" " aria-label="address" aria-describedby="basic-addon1" id="date" value="<?= $data['ngaysinh'] ?>" style="cursor: pointer;">
                             <label for="date" class="input-name">Ngày Sinh</label>
                         </div>
                     </div>
@@ -105,7 +109,7 @@
                             </script>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 stt">
                         <div class="input-group mb-4">
                             <select id="status" onchange="change()" class="form-select 
                                 <?php
@@ -149,16 +153,18 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 d-flex justify-content-center">
+                <input type="submit" class="btn btn-primary me-2" onsubmit="submit()" href="<?php echo base_url(''); ?>admin/edit_account" value="Lưu">
+                <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <?php
+                if($this->session->flashdata("error")){echo $this->session->flashdata("error");}
+                if($this->session->flashdata("success")){echo $this->session->flashdata("success");}
+                ?>
+            </div>
+        </form>
         <?php endforeach ?>
-        <div class="col-12 d-flex justify-content-center">
-            <input type="submit" class="btn btn-primary me-2" name="btnluu" href="<?php echo base_url(''); ?>admin/edit_account" value="Lưu">
-            <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-            <?php
-            echo '<label class="text-danger">' . $this->session->flashdata("error") . '</label>';
-            echo '<label class="text-success">' . $this->session->flashdata("success") . '</label>';
-            ?>
-        </div>
+        
 </section>
 <?php include('footer_admin.php'); ?>

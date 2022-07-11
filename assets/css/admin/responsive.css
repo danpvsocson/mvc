@@ -14,7 +14,7 @@
     section#body{
         margin-top: 56px;
     }
-    html {
+    body {
         font-size: 16px;
     }
     /* *CSS */
@@ -34,17 +34,38 @@
         display: block;
         font-size: 40px;
     }
+    label.input-name{
+        position: absolute;
+        left: 20px;
+        padding: 0px 3px;
+        transform: translateY(32%);
+        background-color: white;
+        transition: all 0.5s;
+        user-select: none;
+        color: rgb(156, 156, 156);
+        pointer-events: none;
+        background-color:transparent;
+    }
+    form.form-add input:focus + label.input-name ,form.form-add input:not(:placeholder-shown) + label.input-name{
+        transform: translateY(-55%);
+        transition: all .5s;
+        color: black;
+        left: 25px;
+        z-index: 9;
+        line-height:5px;
+        background-color:white;
+    }
 }
 
 
 
 /** Mobile */
 @media (max-width: 740px){
-    html{
-        font-size: 11px;
+    body{
+        font-size: 11px !important;
     }
     section#body{
-        margin-top: 42.5px;
+        margin-top: 56.5px;
     }
     .off{
         display: none;
@@ -53,7 +74,7 @@
         justify-items: center;
         align-items:center;
         background: rgb(167,254,255);
-    background: linear-gradient(52deg, rgba(167,254,255,1) 0%, rgba(138,255,164,1) 98%);
+        background: linear-gradient(52deg, rgba(167,254,255,1) 0%, rgba(138,255,164,1) 98%);
         width: 180px;
         height: 180px;
         margin: 0px auto;
@@ -69,10 +90,38 @@
         width: 50%;
     }
     div.row > div.col-md-6{
-        width: 75%;
+        width: 70%;
     }
     div.row > div.col-md-2{
-        width: 25%;
+        width: 30%;
+    }
+    div.row > div.col-md-2.stt{
+        width: 38%;
+    }
+    label.input-name{
+        position: absolute;
+        left: 15px;
+        padding: 0px 3px;
+        transform: translateY(50%);
+        background-color: white;
+        transition: all 0.5s;
+        user-select: none;
+        color: rgb(156, 156, 156);
+        pointer-events: none;
+        background-color:transparent;
+    }
+    form.form-add input:focus + label.input-name ,form.form-add input:not(:placeholder-shown) + label.input-name{
+        transform: translateY(-55%);
+        transition: all .5s;
+        color: black;
+        left: 20px;
+        z-index: 9;
+        line-height:5px;
+        background-color:white;
+    }
+    .btn-sm{
+        font-size:9px;
+        width: 50px;
     }
 }
 .form-control:focus{

@@ -94,7 +94,7 @@ class admin extends CI_Controller
 		$hoten = trim($this->input->post('hoten'));
 		$gioitinh = $this->input->post('gioitinh');
 		$ngaysinh = $this->input->post('ngaysinh');
-		if(!$ngaysinh){$ngaysinh = date('d/m/Y');}
+		if(!$ngaysinh || $ngaysinh == ''){$ngaysinh = date('Y-m-d');}
 		$sdt = $this->input->post('sdt');
 		$email = trim($this->input->post('email'));
 		$diachi = trim($this->input->post('diachi'));
@@ -115,30 +115,32 @@ class admin extends CI_Controller
 		} else {
 			$avatar = 'https://bit.ly/3nOXIFh';
 		}
+		// var_dump($ngaysinh);
+		// die();
 		$trangthai = $this->input->post('trangthai');
 		if ($gioitinh != '') {
 			$this->load->model('admin/add');
 			$check = $this->add->add_account($username, $password, $hoten, $gioitinh, $ngaysinh, $sdt, $email, $diachi, $avatar, $trangthai);
 			switch ($check) {
 				case 1:
-					$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
+					$this->session->set_flashdata('error','<i class="error" id="testtb" style="display:none;">Tài Khoản Này Đã Có</i>');
 					redirect(base_url() . 'admin/add_account_form');
 					break;
 				case 2:
-					$this->session->set_flashdata('error', 'Email Này Đã Có');
+					$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;">Email Này Đã Có</i>');
 					redirect(base_url() . 'admin/add_account_form');
 					break;
 				case 3:
-					$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
+					$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;">Số Điện Thoại Này Đã Có</i>');
 					redirect(base_url() . 'admin/add_account_form');
 					break;
 				case 4:
-					$this->session->set_flashdata('success', 'Thêm Thành Công');
+					$this->session->set_flashdata('success', '<i class="success" id="testtb" style="display:none;">Thêm</i>');
 					redirect(base_url() . 'admin/add_account_form');
 					break;
 			}
 		}else{
-			$this->session->set_flashdata('error', 'Chưa Chọn Giới Tính');
+			$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;">Chưa Chọn Giới Tính</i>');
 			redirect(base_url() . 'admin/add_account_form');
 		}
 	}
@@ -153,14 +155,15 @@ class admin extends CI_Controller
 	public function edit_account()
 	{
 		$id = $this->input->post('id');
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$hoten = $this->input->post('hoten');
+		$username = trim($this->input->post('username'));
+		$password = trim($this->input->post('password'));
+		$hoten = trim($this->input->post('hoten'));
 		$gioitinh = $this->input->post('gioitinh');
 		$ngaysinh = $this->input->post('ngaysinh');
+		if($ngaysinh == ''){$ngaysinh = date('Y-m-d');}
 		$sdt = $this->input->post('sdt');
-		$email = $this->input->post('email');
-		$diachi = $this->input->post('diachi');
+		$email = trim($this->input->post('email'));
+		$diachi = trim($this->input->post('diachi'));
 
 		// * Upload Avatar
 		$config['upload_path'] = './uploads';
@@ -178,29 +181,27 @@ class admin extends CI_Controller
 		} else {
 			$avatar = $this->input->post('avatar_old');
 		}
-		var_dump(date("d/m/Y"));
-		die();
+		// var_dump($ngaysinh);
+		// die();
 		$trangthai = $this->input->post('trangthai');
 			$this->load->model('admin/edit');
 			$check = $this->edit->edit_account($id, $username, $password, $hoten, $gioitinh, $ngaysinh, $sdt, $email, $diachi, $avatar, $trangthai);
 			switch ($check) {
 				case 1:
-					$this->session->set_flashdata('error', 'Tài Khoản Này Đã Có');
-					$this->form_edit_account($username);
+					$this->session->set_flashdata('error','<i class="error" id="testtb" style="display:none;">Tài Khoản Này Đã Có</i>');
+					redirect(base_url() . 'admin/form_edit_account/'.$id);
 					break;
-
 				case 2:
-					$this->session->set_flashdata('error', 'Email Này Đã Có');
-					$this->form_edit_account($username);
+					$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;">Email Này Đã Có</i>');
+					redirect(base_url() . 'admin/form_edit_account/'.$id);
 					break;
 				case 3:
-					$this->session->set_flashdata('error', 'Số Điện Thoại Này Đã Có');
-					$this->form_edit_account($username);
+					$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;">Số Điện Thoại Này Đã Có</i>');
+					redirect(base_url() . 'admin/form_edit_account/'.$id);
 					break;
 				case 4:
-					$this->session->set_flashdata('success', 'Thay Đổi Thành Công');
-					$this->form_edit_account($username);
-					// redirect(base_url() . 'admin/form_edit_account');
+					$this->session->set_flashdata('success', '<i class="success" id="testtb" style="display:none;">Cập Nhật</i>');
+					redirect(base_url() . 'admin/form_edit_account/'.$id);
 					break;
 			}
 		
@@ -209,9 +210,15 @@ class admin extends CI_Controller
 	{
 		$this->load->model('admin/delete');
 		if($this->delete->delete_account($username)){
-			echo'';
+			if ($this->session->userdata('username') != '') {
+				$this->session->set_flashdata('success', '<i class="success" id="testtb" style="display:none;">Xóa</i>');
+				redirect(base_url() . 'admin/account');
+			}
 		}else{
-			echo'';
+			if ($this->session->userdata('username') != '') {
+				$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none;"></i>');
+				redirect(base_url() . 'admin/account');
+			}
 		}
 	}
 	// * Content

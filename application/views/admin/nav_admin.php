@@ -17,13 +17,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="assets/css/swiper-slide.css">
     <link rel="stylesheet" href="assets/css/admin/style.css">
     <link rel="stylesheet" href="assets/css/admin/responsive.css">
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
     <!--* JQuery -->
-    <script type="text/javascript" src="assets/js/admin/main.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-
-
-<body>
+<body onload="checkPage()">
     <main>
         <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed menu" style="top: 0; left:0; right:0;z-index: 99;">
             <div class="container-fluid" style="z-index: 9;">

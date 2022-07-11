@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="assets/css/admin/style.css">
     <link rel="stylesheet" href="assets/css/admin/responsive.css">
     <link rel="stylesheet" href="assets/css/admin/admin.css">
-    <link href="assets/css/admin/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="assets/css/admin/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
     <!--* JQuery -->
-    <script type="text/javascript" src="assets/js/admin/main.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery-upload.js"></script>
     <script type="application/x-javascript">

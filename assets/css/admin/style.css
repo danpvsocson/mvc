@@ -20,7 +20,8 @@ body {
     --line-height-mobile: 25px;
     --size-header-pc: 76px;
     --size-header-mobile: 60px;
-    --color-a-newspaper: rgba(31, 31, 255, 0.6)
+    --color-a-newspaper: rgba(31, 31, 255, 0.6);
+
 }
 
 /* *Animation */
@@ -90,24 +91,81 @@ input::-webkit-inner-spin-button {
 div.input-group{
     position: relative;
 }
-label.input-name{
-    position: absolute;
-    left: 20px;
-    padding: 0px 3px;
-    transform: translateY(32%);
-    background-color: white;
-    transition: all 0.5s;
-    user-select: none;
-    color: rgb(156, 156, 156);
-    pointer-events: none;
-    background-color:transparent;
+
+@keyframes show_slide {
+	0% {
+		transform: translateX(100%);
+	}
+	40% {
+		transform: translateX(-10%);
+	}
+	80% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
 }
-form.form-add input:focus + label.input-name ,form.form-add input:not(:placeholder-shown) + label.input-name{
-    transform: translateY(-55%);
-    transition: all .5s;
-    color: black;
-    left: 25px;
-    z-index: 9;
-    line-height:5px;
-    background-color:white;
+
+@keyframes hide_slide {
+	0% {
+		transform: translateX(-10px);
+	}
+	40% {
+		transform: translateX(0%);
+	}
+	80% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(120%);
+	}
 }
+#thong_bao {
+	position: fixed;
+	right: 10px;
+    top: 60px;
+}
+.thong_bao{
+	margin-bottom: 10px;
+    padding:8px 12px;
+    animation: show_slide 1s ease forwards;
+}
+.thong_bao.success {
+	background-color: rgba(89, 236, 89, 0.658);
+	border-left: 4px solid green;
+}
+
+.thong_bao.error {
+	background-color: rgba(255, 95, 95, 0.555);
+	border-left: 4px solid red;
+}
+@keyframes countdown {
+	20% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+.countdown {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	z-index: 1;
+    
+	animation: countdown 1.5s linear forwards;
+}
+.thong_bao.success .countdown {
+	border-top:2px solid green;
+    border-bottom:2px solid green;
+}
+.thong_bao.error .countdown {
+	border-top:2px solid red;
+    border-bottom:2px solid red;
+}
+
+
+
