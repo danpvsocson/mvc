@@ -1,4 +1,21 @@
-
+<div class="col-12 d-flex justify-content-center">
+		<?php
+		if ($this->session->flashdata("error")) {
+			echo $this->session->flashdata("error");
+		}
+		if ($this->session->flashdata("success")) {
+			echo $this->session->flashdata("success");
+		}
+		?>
+	</div>
+	</main>
+	<div id="thong_bao">
+		<!-- <div class="thong_bao">
+		<i class="fas fa-check-circle"></i>
+		<span class="msg">Thành Công</span>
+		<span class="countdown"></span>
+	</div> -->
+	</div>
 <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 
 <!-- pop-up-box-js-file -->
@@ -20,6 +37,7 @@
 
     });
 </script>
+
 <script type="text/javascript" src="assets/css/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
 <script src="assets/css/aos-animasiton-scroll/dist/aos.js"></script>
 <script>
@@ -27,3 +45,5 @@
         once: true
     });
 </script>
+<script type="text/javascript" src="assets/js/admin/main.js"></script>
+

@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="assets/css/swiper-slide.css">
     <link rel="stylesheet" href="assets/css/admin/style.css">
-    <link rel="stylesheet" href="assets/css/admin/responsive.css">
     <link rel="stylesheet" href="assets/css/admin/admin.css">
     <link href="assets/css/admin/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="assets/css/admin/responsive.css">
     <!--* JQuery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery-upload.js"></script>

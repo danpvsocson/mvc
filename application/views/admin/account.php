@@ -2,8 +2,8 @@
 <title>Account Manager</title>
 <section class="container" id="body">
     <h2 class=" text-center">Danh Sách Tài Khoản</h2>
-    <div class="d-flex justify-content-center border-bottom border-secondary pb-3 mb-3"><a href="<?php echo base_url(''); ?>admin/add_account_form" class="btn btn-success">Thêm Tài Khoản</a></div>
-    <!-- <hr> -->
+    <div class="d-flex justify-content-center border-bottom border-secondary pb-3 mb-3"><a href="<?php echo base_url(''); ?>manager/account/add_account_form" class="btn btn-success">Thêm Tài Khoản</a></div>
+
     <table class=" table table-striped">
         <tr>
             <th class="col-1 off">STT</th>
@@ -30,22 +30,32 @@
                         echo '<td class="off"><p class="text-danger m-0">Disabled</p></td>';
                     }
                     ?>
-                    <td class="text-center"><a href="<?php echo base_url(''); ?>admin/form_edit_account/<?= $data['id'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Sửa</a></td>
-                    <td class="text-center"><a href="<?php echo base_url(''); ?>admin/delete_account/<?= $data['username'] ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Xóa</a></td>
+                    <td class="text-center"><a href="<?php echo base_url(''); ?>manager/account/form_edit_account/<?= $data['id'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Sửa</a></td>
+                    <td class="text-center"><a href="<?php echo base_url(''); ?>manager/account/delete_account/<?= $data['username'] ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Xóa</a></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
     </table>
-    <div class="col-12 d-flex justify-content-center">
-        <?php
-        if ($this->session->flashdata("error")) {
-            echo $this->session->flashdata("error");
-        }
-        if ($this->session->flashdata("success")) {
-            echo $this->session->flashdata("success");
-        }
-        ?>
-    </div>
 </section>
-<?php include('page.php'); ?>
+
+<!-- * Page -->
+<section class=" d-flex container justify-content-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <?php
+            // if()
+            ?>
+            <!-- <li class="page-item"><a class="page-link" href="><i class="fas fa-angle-left"></i></a></li> -->
+            <?php
+            for ($p = 0; $p < $page; $p++) {
+                echo '<li class="page-item"><a class="page-link" href="manager/account/page/'.$p+1..'">' . $p + 1. . '</a></li>';
+            }
+            ?>
+            <!-- <li class="page-item"><p class="page-link">...</p></li> -->
+            <!-- <li class="page-item"><a class="page-link" href="><i class="fas fa-angle-right"></i></p></li> -->
+        </ul>
+        <p class="text-center">1/<?= $page ?></p>
+    </nav>
+</section>
+
 <?php include('footer_admin.php'); ?>

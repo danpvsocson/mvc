@@ -9,11 +9,12 @@ class view extends CI_Model {
         parent::__construct();
     }
     // * Account
-    public function view_account($account_page)
+    public function view_account($so_tin_1_trang)
     {   
-        
         $this->db->select('*');
-        $account = $this->db->get('account',$account_page,0);
+        $all_account = $this->db->get('account');
+        $all_account = count($all_account->result_array());
+        $account = $this->db->get('account',$so_tin_1_trang,0);
         $account = $account->result_array();
         return $account;
     }
@@ -26,18 +27,44 @@ class view extends CI_Model {
         return $account;
     }
 
-    public function page_account($account_page)
+    public function page_account($so_tin_1_trang)
     {
         $this->db->select('*');
-        $number_account = $this->db->get('account');
-        $number_account = $number_account->result_array();
-        $all_account = count($number_account);
-        $page = round($all_account/$account_page);
+        $all_account = $this->db->get('account');
+        $all_account = count($all_account->result_array());
+        $page = round($all_account/$so_tin_1_trang);
         return $page;
     }
-    public function page_load($inpage, $account_page){
+    public function load_account_theo_trang($page_index, $so_tin_1_trang)
+    {
+        $this->db->select('*');
+        $all_account = $this->db->get('account');
+        $vitri = ($page_index-1)*$so_tin_1_trang;
+        $all_account = count($all_account->result_array());
+        $account = $this->db->get('account',$so_tin_1_trang,$vitri);
+        $account = $account->result_array();
+        return $account;
     }
 
+
+    
+    // * Content
+    public function view_content($so_tin_1_trang)
+    {   
+        $this->db->select('*');
+        $content = $this->db->get('content',$so_tin_1_trang,0);
+        $content = $content->result_array();
+        return $content;
+    }
+    public function page_content($so_tin_1_trang)
+    {
+        $this->db->select('*');
+        $number_content = $this->db->get('content');
+        $number_content = $number_content->result_array();
+        $all_content = count($number_content);
+        $page = round($all_content/$so_tin_1_trang);
+        return $page;
+    }
 }
 
 /* End of file: view.php */

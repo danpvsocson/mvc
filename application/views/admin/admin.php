@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </head>
 
-<body>
+<body onload="checkPage()">
 
 	<h1>Admin Login Form</h1>
 
@@ -32,10 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</ul> -->
 			<div class="aitssendbuttonw3ls">
 				<input type="submit" value="LOGIN" style="border-radius: 10px;">
-				<?php
-					echo '<br><label class="text-danger mt-3">'. 
-					$this->session->flashdata("error").'</label>';
-				?>
+				
 				<!-- <p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p> -->
 				<div class="clear"></div>
 			</div>
@@ -85,11 +82,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- //for register popup -->
 
 	<div class="w3footeragile">
-		<p> &copy; 2022 | Design by <a href="https://www.fb.com/phamvandanhk9" target="_blank">DanPV</a></p>
+		<p> &copy; 2022 | Design by <a href="https://www.fb.com/danpv.socson" target="_blank">DanPV</a></p>
 	</div>
-
-
-	
 	<?php include('footer.php'); ?>
 </body>
 

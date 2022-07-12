@@ -102,8 +102,7 @@
         position: absolute;
         left: 15px;
         padding: 0px 3px;
-        transform: translateY(50%);
-        background-color: white;
+        transform: translateY(60%);
         transition: all 0.5s;
         user-select: none;
         color: rgb(156, 156, 156);
@@ -122,6 +121,12 @@
     .btn-sm{
         font-size:9px;
         width: 50px;
+    }
+    #body h2.text-center{
+        font-size: 15px !important;
+    }
+    #body > div > a{
+        font-size: 12px;
     }
 }
 .form-control:focus{

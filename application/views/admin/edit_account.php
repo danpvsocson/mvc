@@ -8,7 +8,7 @@ include('nav_admin.php'); ?>
     <h2 class=" text-center">Sửa Tài Khoản</h2>
     <hr>
     <?php foreach ($accountshow as $key => $data) : ?>
-        <form class="row g-3 form-add" action="<?php echo base_url(''); ?>admin/edit_account" method="post" enctype="multipart/form-data" autocomplete="on">
+        <form class="row g-3 form-add" action="<?php echo base_url(''); ?>manager/account/edit_account" method="post" enctype="multipart/form-data" autocomplete="on">
             <p class="mb-0">Hãy điền đủ mục (<label class="text-danger">*</label>)</p>
             <input type="hidden" value="<?= $data['id'] ?>" name="id">
             <div class="col-md-3" style="display: flex;align-items: center;justify-content:center;">
@@ -154,15 +154,10 @@ include('nav_admin.php'); ?>
                 </div>
             </div>
             <div class="col-12 d-flex justify-content-center">
-                <input type="submit" class="btn btn-primary me-2" onsubmit="submit()" href="<?php echo base_url(''); ?>admin/edit_account" value="Lưu">
-                <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
+                <input type="submit" class="btn btn-primary me-2" href="<?php echo base_url(''); ?>manager/account/edit_account" value="Lưu">
+                <a href="<?php echo base_url(''); ?>manager/account" type="button" class="btn btn-danger">Hủy</a>
             </div>
-            <div class="col-12 d-flex justify-content-center">
-                <?php
-                if($this->session->flashdata("error")){echo $this->session->flashdata("error");}
-                if($this->session->flashdata("success")){echo $this->session->flashdata("success");}
-                ?>
-            </div>
+            
         </form>
         <?php endforeach ?>
         

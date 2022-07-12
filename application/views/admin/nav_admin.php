@@ -30,31 +30,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/home"><i class="fas fa-home"></i> Home</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/home"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/account"><i class="fas fa-user"></i> Tài Khoản</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/account"><i class="fas fa-user"></i> Tài Khoản</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/content"><i class="fas fa-newspaper"></i> Bài Viết</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/content"><i class="fas fa-newspaper"></i> Bài Viết</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/shop"><i class="fab fa-shopify"></i> Sản Phẩm</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/shop"><i class="fab fa-shopify"></i> Sản Phẩm</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                <i class="fas fa-cog"></i> Modul <i class="fas fa-caret-down"></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item text-dark" href="admin/product_group">Nhóm Sản Phẩm</a></li>
-                                <li><a class="dropdown-item text-dark" href="admin/content_group">Nhóm Bài Viết</a></li>
+                                <li><a class="dropdown-item text-dark" href="manager/modul/product_group">Nhóm Sản Phẩm</a></li>
+                                <li><a class="dropdown-item text-dark" href="manager/modul/content_group">Nhóm Bài Viết</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/help"><i class="fas fa-life-ring"></i> Hỗ Trợ</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/help"><i class="fas fa-life-ring"></i> Hỗ Trợ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" aria-current="page" href="admin/bug"><i class="fas fa-bug"></i> Truy Vết</a>
+                            <a class="nav-link text-dark" aria-current="page" href="manager/bug"><i class="fas fa-bug"></i> Truy Vết</a>
                         </li>
                     </ul>
                 </div>

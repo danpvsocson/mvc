@@ -1,3 +1,13 @@
+<div class="col-12 d-flex justify-content-center">
+	<?php
+	if ($this->session->flashdata("error")) {
+		echo $this->session->flashdata("error");
+	}
+	if ($this->session->flashdata("success")) {
+		echo $this->session->flashdata("success");
+	}
+	?>
+</div>
 </main>
 <div id="thong_bao">
 	<!-- <div class="thong_bao">

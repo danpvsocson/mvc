@@ -3,7 +3,7 @@
 <section class=" container">
     <h2 class=" text-center">Thêm Tài Khoản</h2>
     <hr>
-    <form class="row g-3 form-add" action="<?php echo base_url(''); ?>admin/add_account" method="post" enctype="multipart/form-data" autocomplete="on">
+    <form class="row g-3 form-add" action="<?php echo base_url(''); ?>manager/account/add_account" method="post" enctype="multipart/form-data" autocomplete="on">
         <p class="mb-0">Hãy điền đủ mục (<label class="text-danger">*</label>)</p>
         <div class="col-md-3" style="display: flex;align-items: center;justify-content:center;">
             <label for="input-img" class="preview" style="cursor: pointer;">
@@ -96,7 +96,7 @@
                         </script>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 stt">
                     <div class="input-group mb-4">
                         <select id="status" onchange="change()" name="trangthai" class="form-select text-danger" aria-label="Default select example">
                             <option value="1" class=" text-success">Enabled</option>
@@ -122,20 +122,11 @@
         </div>
 
         <div class="col-12 d-flex justify-content-center">
-            <input type="submit" class="btn btn-primary me-2 btn_thong_bao" name="btnluu" href="<?php echo base_url(''); ?>admin/add_account" value="Thêm">
-            <a href="<?php echo base_url(''); ?>admin/account" type="button" class="btn btn-danger">Hủy</a>
+            <input type="submit" class="btn btn-primary me-2 btn_thong_bao" name="btnluu" href="<?php echo base_url(''); ?>manager/account/add_account" value="Thêm">
+            <a href="<?php echo base_url(''); ?>manager/account" type="button" class="btn btn-danger">Hủy</a>
         </div>
         
-        <div class="col-12 d-flex justify-content-center">
-            <?php
-            if ($this->session->flashdata("error")) {
-                echo $this->session->flashdata("error");
-            }
-            if ($this->session->flashdata("success")) {
-                echo $this->session->flashdata("success");
-            }
-            ?>
-        </div>
+       
 
     </form>
 
