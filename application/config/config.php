@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 /* Nhập tên miền ở đây */
 $config['base_url'] = 'https://localhost/admin';
-// $config['base_url'] = 'http://danpv.ga';
+// $config['base_url'] = 'http://yasua.ga';
 
 /*
 |--------------------------------------------------------------------------
