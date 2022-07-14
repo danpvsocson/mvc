@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class edit extends CI_Model
+class Edit extends CI_Model
 {
 
     protected $table = '';

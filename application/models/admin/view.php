@@ -1,10 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class view extends CI_Model {
+class View extends CI_Model {
 
     protected $table = '';
-
     public function __construct() {
         parent::__construct();
     }
@@ -49,21 +48,23 @@ class view extends CI_Model {
 
     
     // * Content
-    public function view_content($so_tin_1_trang)
+    public function view_content()
     {   
-        $this->db->select('*');
-        $content = $this->db->get('content',$so_tin_1_trang,0);
-        $content = $content->result_array();
-        return $content;
+        // $this->db->select('*');
+        // $content = $this->db->get('content',$so_tin_1_trang,0);
+        // $content = $content->result_array();
+        // return $content;
+        echo 'content';
     }
-    public function page_content($so_tin_1_trang)
+    public function page_content()
     {
-        $this->db->select('*');
-        $number_content = $this->db->get('content');
-        $number_content = $number_content->result_array();
-        $all_content = count($number_content);
-        $page = round($all_content/$so_tin_1_trang);
-        return $page;
+        // $this->db->select('*');
+        // $number_content = $this->db->get('content');
+        // $number_content = $number_content->result_array();
+        // $all_content = count($number_content);
+        // $page = round($all_content/$so_tin_1_trang);
+        // return $page;
+        echo 'content-page';
     }
 }
 

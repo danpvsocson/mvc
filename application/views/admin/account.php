@@ -48,7 +48,9 @@
             <!-- <li class="page-item"><a class="page-link" href="><i class="fas fa-angle-left"></i></a></li> -->
             <?php
             for ($p = 0; $p < $page; $p++) {
-                echo '<li class="page-item"><a class="page-link" href="manager/account/page/'.$p+1..'">' . $p + 1. . '</a></li>';
+            ?>
+                <li class="page-item"><a class="page-link" href="manager/account/page/<?=$p+1?>"><?=$p+1?></a></li>';
+            <?php    
             }
             ?>
             <!-- <li class="page-item"><p class="page-link">...</p></li> -->

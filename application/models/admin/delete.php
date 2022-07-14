@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class delete extends CI_Model {
+class Delete extends CI_Model {
 
     protected $table = '';
 

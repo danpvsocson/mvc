@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin_login extends CI_Model {
+class Admin_login extends CI_Model {
 
     protected $table = '';
 
@@ -16,7 +16,6 @@ class admin_login extends CI_Model {
         $this->db->where('password', $password);
         $login_status = $this->db->get('admin');
         $login_status = $login_status->result_array();
-        //  var_dump($loginstatus);
         if ($login_status) {
             return $login_status;
         } else {
@@ -26,7 +25,6 @@ class admin_login extends CI_Model {
     }
     public function edit_password_admin($password)
     {
-        // var_dump($password);
         return $this->db->update('admin', array('password' => $password));
     }
 
