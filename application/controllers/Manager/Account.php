@@ -7,7 +7,7 @@ class Account extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->so_tin_1_trang = 5;
+		$this->so_tin_1_trang = 2;
 	}
 
 	public function index()

@@ -31,7 +31,8 @@ class View extends CI_Model {
         $this->db->select('*');
         $all_account = $this->db->get('account');
         $all_account = count($all_account->result_array());
-        $page = round($all_account/$so_tin_1_trang);
+        $page = ceil($all_account/$so_tin_1_trang);
+        // var_dump($page);die();
         return $page;
     }
     public function load_account_theo_trang($page_index, $so_tin_1_trang)

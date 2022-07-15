@@ -161,10 +161,12 @@ div.input-group{
 .thong_bao.success .countdown {
 	border-top:2px solid green;
     border-bottom:2px solid green;
+	background-color: green;
 }
 .thong_bao.error .countdown {
 	border-top:2px solid red;
     border-bottom:2px solid red;
+	background-color: red;
 }
 
 
