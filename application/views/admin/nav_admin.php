@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="assets/img/admin/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/admin/logo/logo.png" type="image/x-icon">
     <base href="<?php echo base_url(); ?>">
     <!-- * Boostrap  --->
     <link rel="stylesheet" href="assets/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -89,10 +89,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="input-group flex-nowrap">
                                 <input type="text" name="password" class="form-control" placeholder="Nhập mật khẩu admin mới" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
-                            <?php
-                                echo '<label class="text-success mt-3">' .
-                                $this->session->flashdata("success") . '</label>';
-                            ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>

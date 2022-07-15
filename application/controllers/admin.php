@@ -38,11 +38,16 @@ class admin extends CI_Controller
 	}
 	public function edit_password_admin()
 	{
-		$password = $this->input->post('password');
-		$this->load->model('admin/admin_login');
-		if ($this->admin_login->edit_password_admin($password)) {
-			$this->session->set_flashdata('success', '<i class="success" id="testtb" style="display:none;">Thay</i>');
-			redirect(base_url().'admin/home');
+		if ($this->session->userdata('username') != '' || $this->session->userdata('password') != '') {
+			$password = trim($this->input->post('password'));
+			$this->load->model('admin/admin_login');
+			if ($this->admin_login->edit_password_admin($password)) {
+				$this->session->set_flashdata('success', '<i class="success" id="testtb" style="display:none;">Thay</i>');
+				redirect(base_url().'manager/home');
+			}
+		} else {
+			$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none">Truy Cập</i>');
+			redirect(base_url() . 'admin');
 		}
 	}
 }
