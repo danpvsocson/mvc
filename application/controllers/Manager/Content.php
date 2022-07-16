@@ -24,6 +24,15 @@ class Content extends CI_Controller {
 			redirect(base_url() . 'admin');
 		}
     }
+	public function add_content_form()
+	{
+		if ($this->session->userdata('username') != '' || $this->session->userdata('password') != '') {
+			$this->load->view('admin/add_content');
+		} else {
+			$this->session->set_flashdata('error', '<i class="error" id="testtb" style="display:none">Truy Cập</i>');
+			redirect(base_url() . 'admin');
+		}
+	}
 
 }
 

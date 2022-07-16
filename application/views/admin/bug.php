@@ -1,7 +1,13 @@
 <?php include('nav_admin.php'); ?>
 <title>Bug Manager</title>
-<section class=" container" id="body">
+<section class=" container">
+    <h2 class=" text-center">Thêm Bài Viết</h2>
+    <hr>
+    <textarea name="chitiet" id="chitiet" cols="30" rows="10"></textarea>
 
-    <h1>Đây là trang truy vết</h1>
-</section>
+
+
+
+
+    </section>
 <?php include('footer_admin.php'); ?>

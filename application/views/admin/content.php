@@ -2,13 +2,8 @@
 <title>Content Manager</title>
 <section class=" container" id="body">
 
-    <h2 class="text-center">Đây là trang Bài viết</h2>
-    <section class=" d-flex container justify-content-center">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#"></a>A</li>
-           
-    </nav>
+    <h2 class=" text-center">Danh Sách Bài Viết</h2>
+    <div class="d-flex justify-content-center border-bottom border-secondary pb-3 mb-3"><a href="<?php echo base_url(''); ?>manager/content/add_content_form" class="btn btn-success">Thêm Bài Viết</a></div>
 </section>
 </section>
 <?php include('footer_admin.php'); ?>

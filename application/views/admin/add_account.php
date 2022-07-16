@@ -125,9 +125,6 @@
             <input type="submit" class="btn btn-primary me-2 btn_thong_bao" name="btnluu" href="<?php echo base_url(''); ?>manager/account/add_account" value="Thêm">
             <a href="<?php echo base_url(''); ?>manager/account" type="button" class="btn btn-danger">Hủy</a>
         </div>
-        
-       
-
     </form>
 
 </section>
