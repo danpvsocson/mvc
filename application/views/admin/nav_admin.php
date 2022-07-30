@@ -14,12 +14,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="assets/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/aos-animasiton-scroll/dist/aos.css">
     <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/admin/jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-5.1.3-dist/css/bootstrap-icons.css"> -->
     <link rel="stylesheet" href="assets/css/swiper-slide.css">
     <link rel="stylesheet" href="assets/css/admin/style.css">
     <link rel="stylesheet" href="assets/css/admin/responsive.css">
     <!--* JQuery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/admin/tinymce/tinymce.min.js"></script>
+    <script src="assets/js/admin/tinymce/config.tinymce.js"></script>
 <body onload="checkPage()">
     <main>
         <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed menu" style="top: 0; left:0; right:0;z-index: 99;">

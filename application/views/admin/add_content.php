@@ -8,7 +8,7 @@
             <a href="">aaa</a>
         </div>
         <div class="col-md-8">
-            <textarea name="chitiet" id="chitiet" cols="30" rows="10"></textarea>
+            <textarea name="chitiet" id="chitiet" cols="8" rows="7"></textarea>
         </div>
     </form>
 
