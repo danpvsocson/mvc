@@ -6,7 +6,7 @@ if (session_id() == '') {
 
 mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
-mb_http_input('UTF-8');
+// mb_http_input('UTF-8');
 mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
@@ -31,7 +31,7 @@ setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 |
 */
 
-define('USE_ACCESS_KEYS', true); // TRUE or FALSE
+define('USE_ACCESS_KEYS', false); // TRUE or FALSE
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ $config = array(
     | without final / (DON'T TOUCH)
     |
     */
-    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST']."/mvc/assets/plugin/filemanager",
+    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST']."/mvc/assets/plugin/",
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder
@@ -76,7 +76,7 @@ $config = array(
     | with start and final /
     |
     */
-    'upload_dir' => '/source/',
+    'upload_dir' => '/uploads/',
     /*
     |--------------------------------------------------------------------------
     | relative path from filemanager folder to upload folder
@@ -85,7 +85,7 @@ $config = array(
     | with final /
     |
     */
-    'current_path' => '../source/',
+    'current_path' => '../uploads/',
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_base_path' => '../../../assets/plugin/filemanager/thumbs/',
+    'thumbs_base_path' => '../thumbs/',
 
     /*
     |--------------------------------------------------------------------------
@@ -272,8 +272,8 @@ $config = array(
     // set maximum pixel width and/or maximum pixel height for all images
     // If you set a maximum width or height, oversized images are converted to those limits. Images smaller than the limit(s) are unaffected
     // if you don't need a limit set both to 0
-    'image_max_width'                         => 0,
-    'image_max_height'                        => 0,
+    'image_max_width'                         => 4000,
+    'image_max_height'                        => 4000,
     'image_max_mode'                          => 'auto',
     /*
     #  $option:  0 / exact = defined size;
@@ -288,8 +288,8 @@ $config = array(
     // If you set width or height to 0 the script automatically calculates the other dimension
     // Is possible that if you upload very big images the script not work to overcome this increase the php configuration of memory and time limit
     'image_resizing'                          => false,
-    'image_resizing_width'                    => 0,
-    'image_resizing_height'                   => 0,
+    'image_resizing_width'                    => 4000,
+    'image_resizing_height'                   => 4000,
     'image_resizing_mode'                     => 'auto', // same as $image_max_mode
     'image_resizing_override'                 => false,
     // If set to TRUE then you can specify bigger images than $image_max_width & height otherwise if image_resizing is

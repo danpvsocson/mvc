@@ -20,12 +20,11 @@
                 // inputImg.addEventListener('input', (e) => {
                 inputImg.onchange = (e) => {
                     let file = e.target.value
-                    // console.log(e.target.value);
+                    console.log(e.target.value);
                     if (!file) return
 
                     let img = document.createElement('img')
                     img.src = file
-                    img.style.objectFit = 'cover'
 
                     document.querySelector('.preview').appendChild(img)
                 }
@@ -43,7 +42,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe width="100%" height="400px" frameborder="0" src="assets/plugin/filemanager/filemanager/dialog.php?type=0&field_id=input-img&akey=<?= md5(123454321) ?>"></iframe>
+                        <iframe width="100%" height="400px" src="assets/plugin/file/dialog.php?type=0&field_id=input-img&akey=<?= md5(123454321) ?>"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
