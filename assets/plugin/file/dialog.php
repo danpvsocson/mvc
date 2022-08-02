@@ -1267,7 +1267,7 @@ $files = $sorted;
                         echo "'$aopt_key':".json_encode($aopt_val).",";
                     }
                 } ?>
-            }; 
+            };
         </script>
 
         <script>

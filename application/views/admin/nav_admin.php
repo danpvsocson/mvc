@@ -24,6 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/admin/tinymce/tinymce.min.js"></script>
     <script src="assets/js/admin/tinymce/config.tinymce.js"></script>
+    <script src="assets/plugin/file/plugin.min.js"></script>
 <body onload="checkPage()">
     <main>
         <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed menu" style="top: 0; left:0; right:0;z-index: 99;">

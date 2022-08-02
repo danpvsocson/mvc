@@ -11,7 +11,7 @@ mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
 date_default_timezone_set('Europe/Rome');
-setlocale(LC_CTYPE, 'en_US'); //correct transliteration
+setlocale(LC_CTYPE, 'vi_VN'); //correct transliteration
 
 /*
 |--------------------------------------------------------------------------
@@ -211,7 +211,7 @@ $config = array(
     | in Megabytes
     |
     */
-    'MaxSizeUpload' => 10,
+    'MaxSizeUpload' => 10000,
 
     /*
     |--------------------------------------------------------------------------
@@ -228,7 +228,7 @@ $config = array(
     | default language file name
     |--------------------------------------------------------------------------
     */
-    'default_language' => "en_EN",
+    'default_language' => "vi_VN",
 
     /*
     |--------------------------------------------------------------------------
@@ -372,10 +372,10 @@ $config = array(
 
     // defines size limit for paste in MB / operation
     // set 'FALSE' for no limit
-    'copy_cut_max_size'                       => 100,
+    'copy_cut_max_size'                       => 100000,
     // defines file count limit for paste / operation
     // set 'FALSE' for no limit
-    'copy_cut_max_count'                      => 200,
+    'copy_cut_max_count'                      => 200000,
     //IF any of these limits reached, operation won't start and generate warning
 
     //**********************
