@@ -11,7 +11,7 @@ mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
 date_default_timezone_set('Europe/Rome');
-setlocale(LC_CTYPE, 'vi_VN'); //correct transliteration
+setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ setlocale(LC_CTYPE, 'vi_VN'); //correct transliteration
 |
 */
 
-define('USE_ACCESS_KEYS', false); // TRUE or FALSE
+define('USE_ACCESS_KEYS', true); // TRUE or FALSE
 
 /*
 |--------------------------------------------------------------------------
@@ -211,7 +211,7 @@ $config = array(
     | in Megabytes
     |
     */
-    'MaxSizeUpload' => 10000,
+    'MaxSizeUpload' => 10000000,
 
     /*
     |--------------------------------------------------------------------------
@@ -228,7 +228,7 @@ $config = array(
     | default language file name
     |--------------------------------------------------------------------------
     */
-    'default_language' => "vi_VN",
+    'default_language' => "en_EN",
 
     /*
     |--------------------------------------------------------------------------
@@ -243,7 +243,7 @@ $config = array(
 
 
     //Show or not total size in filemanager (is possible to greatly increase the calculations)
-    'show_total_size'						=> false,
+    'show_total_size'						=> true,
     //Show or not show folder size in list view feature in filemanager (is possible, if there is a large folder, to greatly increase the calculations)
     'show_folder_size'						=> false,
     //Show or not show sorting feature in filemanager
@@ -272,8 +272,8 @@ $config = array(
     // set maximum pixel width and/or maximum pixel height for all images
     // If you set a maximum width or height, oversized images are converted to those limits. Images smaller than the limit(s) are unaffected
     // if you don't need a limit set both to 0
-    'image_max_width'                         => 4000,
-    'image_max_height'                        => 4000,
+    'image_max_width'                         => 1920,
+    'image_max_height'                        => 1080,
     'image_max_mode'                          => 'auto',
     /*
     #  $option:  0 / exact = defined size;
@@ -287,9 +287,9 @@ $config = array(
     // If you set $image_resizing to TRUE the script converts all uploaded images exactly to image_resizing_width x image_resizing_height dimension
     // If you set width or height to 0 the script automatically calculates the other dimension
     // Is possible that if you upload very big images the script not work to overcome this increase the php configuration of memory and time limit
-    'image_resizing'                          => false,
-    'image_resizing_width'                    => 4000,
-    'image_resizing_height'                   => 4000,
+    'image_resizing'                          => true,
+    'image_resizing_width'                    => 0,
+    'image_resizing_height'                   => 0,
     'image_resizing_mode'                     => 'auto', // same as $image_max_mode
     'image_resizing_override'                 => false,
     // If set to TRUE then you can specify bigger images than $image_max_width & height otherwise if image_resizing is
@@ -372,10 +372,10 @@ $config = array(
 
     // defines size limit for paste in MB / operation
     // set 'FALSE' for no limit
-    'copy_cut_max_size'                       => 100000,
+    'copy_cut_max_size'                       => 100,
     // defines file count limit for paste / operation
     // set 'FALSE' for no limit
-    'copy_cut_max_count'                      => 200000,
+    'copy_cut_max_count'                      => 200,
     //IF any of these limits reached, operation won't start and generate warning
 
     //**********************

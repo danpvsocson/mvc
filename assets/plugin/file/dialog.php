@@ -1080,18 +1080,18 @@ $files = $sorted;
                         $creation_thumb_path = $mini_src = $src_thumb = $thumbs_path. $file;
 
                         if (!file_exists($src_thumb)) {
-                            if (!create_img($file_path, $creation_thumb_path, 122, 91, 'crop', $config)) {
+                            if (!create_img($file_path, $creation_thumb_path, 1920, 1080, 'crop', $config)) {
                                 $src_thumb = $mini_src = "";
                             }
                         }
                         //check if is smaller than thumb
                         list($img_width, $img_height, $img_type, $attr)=@getimagesize($file_path);
-                        if($img_width<122 && $img_height<91){
+                        if($img_width<=1920 && $img_height<=1080){
                             $src_thumb=$file_path;
                             $show_original=true;
                         }
 
-                        if($img_width<45 && $img_height<38){
+                        if($img_width<=1920 && $img_height<=1080){
                             $mini_src=$config['current_path'].$rfm_subfolder.$subdir.$file;
                             $show_original_mini=true;
                         }
@@ -1261,13 +1261,13 @@ $files = $sorted;
         </div>
 
         <script>
-            var tuiTheme = {
+            // var tuiTheme = {
                 <?php foreach ($config['tui_defaults_config'] as $aopt_key => $aopt_val) {
                     if ( !empty($aopt_val) ) {
                         echo "'$aopt_key':".json_encode($aopt_val).",";
                     }
                 } ?>
-            };
+            // };
         </script>
 
         <script>

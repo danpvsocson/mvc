@@ -42,7 +42,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe width="100%" height="400px" src="assets/plugin/file/dialog.php?type=0&field_id=input-img&akey=<?= md5(123454321) ?>"></iframe>
+                        <iframe width="100%" overflowY="auto" height="500px" src="assets/plugin/file/dialog.php?type=0&field_id=input-img&akey=<?= md5(123454321) ?>"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
