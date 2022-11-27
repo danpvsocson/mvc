@@ -1,49 +1,50 @@
 <div class="col-12 d-flex justify-content-center">
-		<?php
-		if ($this->session->flashdata("error")) {
-			echo $this->session->flashdata("error");
-		}
-		if ($this->session->flashdata("success")) {
-			echo $this->session->flashdata("success");
-		}
-		?>
-	</div>
-	</main>
-	<div id="thong_bao">
-		<!-- <div class="thong_bao">
+	<?php
+	if ($this->session->flashdata("error")) {
+		echo $this->session->flashdata("error");
+	}
+	if ($this->session->flashdata("success")) {
+		echo $this->session->flashdata("success");
+	}
+	?>
+</div>
+<div id="thong_bao">
+	<!-- <div class="thong_bao">
 		<i class="fas fa-check-circle"></i>
 		<span class="msg">Thành Công</span>
 		<span class="countdown"></span>
 	</div> -->
-	</div>
-<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+</div>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script> -->
+<!-- <script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=182'></script> -->
+<!-- <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+	<script src="https://assets.codepen.io/16327/CustomBounce3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/DrawSVGPlugin3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/CustomWiggle3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/EasePack3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/InertiaPlugin.min.js"></script>
+	<script src="https://assets.codepen.io/16327/GSDevTools3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/MotionPathHelper.min.js"></script>
+	<script src="https://assets.codepen.io/16327/Physics2DPlugin3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/PhysicsPropsPlugin3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+	<script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+	<script src="https://assets.codepen.io/16327/SplitText3.min.js"></script> -->
 
-<!-- pop-up-box-js-file -->
-<script src="assets/js/admin/jquery.magnific-popup.js" type="text/javascript"></script>
-<!--//pop-up-box-js-file -->
-<script>
-    $(document).ready(function() {
-        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
-
-    });
-</script>
-
-<script type="text/javascript" src="assets/css/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-<script src="assets/css/aos-animasiton-scroll/dist/aos.js"></script>
-<script>
-    AOS.init({
-        once: true
-    });
-</script>
-<script type="text/javascript" src="assets/js/admin/main.js"></script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/PixiPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script> -->
+<script src="assets/js/admin/admin.js"></script>
+<!-- <script src="assets/js/admin/style.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<!-- <script src="assets/js/admin/style2.js"></script> -->
+<!-- <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script> -->
+<script src="assets/js/admin/main.js"></script>

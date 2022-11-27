@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class admin extends CI_Controller
+class Admin extends CI_Controller
 {
 	public function __construct()
 	{
@@ -13,8 +13,8 @@ class admin extends CI_Controller
 	}
 	public function login()
 	{
-		$username = $this->input->post('Username');
-		$password = $this->input->post('Password');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 		$this->load->model('admin/admin_login');
 		$login_status = $this->admin_login->login($username, $password);
 		if ($login_status) {
