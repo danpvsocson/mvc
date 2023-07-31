@@ -26,8 +26,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 /* Nhập tên miền ở đây */
 $config['base_url'] = 'http://localhost:3000/mvc';
-// $config['base_url'] = 'http://yasua.ga';
-
 /*
 |--------------------------------------------------------------------------
 | Index File
